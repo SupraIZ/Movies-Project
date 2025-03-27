@@ -4,8 +4,8 @@ const createToken = (res, userId) => {
   const token = jwt.sign({ userId }, process.env.JWT_TOKEN, {
     expiresIn: "30d",
   });
-  console.log(process.env.JWT_TOKEN);
-  console.log("Token created:", token);
+  // console.log(process.env.JWT_TOKEN);
+  // console.log("Token created:", token);
   
   //set jwt as an http-only cookie
   res.cookie("jwt", token, {
