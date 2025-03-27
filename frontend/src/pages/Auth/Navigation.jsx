@@ -8,7 +8,7 @@ import { MdOutlineLocalMovies } from "react-icons/md";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
-import { useLoginMutation } from "../../redux/api/users";
+import { useLogoutMutation } from "../../redux/api/users";
 import { logout } from "../../redux/features/auth/authSlice";
 
 const Navigation = () => {
@@ -18,11 +18,11 @@ const Navigation = () => {
   const toggleDropDown = () => {
     setDropDownOpen(!dropDownOpen);
   };
-  
+
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
-  const [logoutApiCall] = useLoginMutation();
+  const [logoutApiCall] = useLogoutMutation();
 
   const logOutHandler = async () => {
     try {
@@ -34,8 +34,10 @@ const Navigation = () => {
     }
   };
 
+  console.log("User Info:", userInfo);
+
   return (
-    <div className="fixed bottom-10 left-[30rem] transform translate-x-1/2 translate-y-1/2 z-50 bg-[#0f0f0f] border w-[30%] px-[4rem] mb-[2rem] rounded">
+    <div className="fixed bottom-8 left-1/2 transform -translate-x-1/2 translate-y-1/2 z-50 bg-[#dac615] border w-[25%] px-[3rem] mb-[2rem] rounded">
       <section className="flex justify-between items-center">
         {/* Section 1 */}
         <div className="flex justify-center items-center mb-[2rem]">
