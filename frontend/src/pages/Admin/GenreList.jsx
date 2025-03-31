@@ -105,7 +105,7 @@ const GenreList = () => {
 
   return (
     <div className="ml-[10rem] flex flex-col md:flex-row">
-      <div className="md:w-1/4 p-3">
+      <div className=" p-3">
         <h1 className="h-12">Manage Genres</h1>
 
         {/* Form for creating a new genre */}
