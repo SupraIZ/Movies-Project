@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import {
@@ -48,11 +49,9 @@ const CreateMovie = () => {
     const { name, value } = e.target;
 
     if (name === "genre") {
-      const selectedGenre = genres.find((genre) => genre.name === value);
-
       setMovieData((prevData) => ({
         ...prevData,
-        genre: selectedGenre ? selectedGenre._id : "",
+        genre: value, // Directly use the selected genre's _id
       }));
     } else {
       setMovieData((prevData) => ({
@@ -115,7 +114,6 @@ const CreateMovie = () => {
 
         toast.success("Movie Added To Database");
       }
-    // eslint-disable-next-line no-unused-vars
     } catch (error) {
       console.error("Failed to create movie: ", createMovieErrorDetail);
       toast.error(`Failed to create movie: ${createMovieErrorDetail?.message}`);
@@ -188,7 +186,7 @@ const CreateMovie = () => {
                 <option>Loading genres...</option>
               ) : (
                 genres.map((genre) => (
-                  <option key={genre.id} value={genre.id}>
+                  <option key={genre._id} value={genre._id}>
                     {genre.name}
                   </option>
                 ))

@@ -1,9 +1,16 @@
-// import React from 'react'
+import Header from "./Movies/Header";
+import MoviesContainerPage from "./Movies/MoviesContainerPage";
 
 const Home = () => {
   return (
-    <div>Home</div>
-  )
-}
+    <>
+      <Header />
 
-export default Home
+      <section className="mt-[10rem]">
+        <MoviesContainerPage />
+      </section>
+    </>
+  );
+};
+
+export default Home;
