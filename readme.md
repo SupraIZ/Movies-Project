@@ -1,4 +1,4 @@
-# Movies Project
+# Movies Management System
 
 This is a full-stack web application for managing movies, genres, and user reviews. The project includes a React-based frontend and an Express.js backend, with MongoDB as the database. It provides features like user authentication, role-based access control, and movie management.
 
